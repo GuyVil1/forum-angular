@@ -31,7 +31,7 @@ class UserController{
     }
 
     createAction({body}, response){
-        console.log(db.Users);
+        console.log(body);
         db.Users.create({...body})
             .then(user => response(200).json(user))
             .catch(err => response.json(err));
