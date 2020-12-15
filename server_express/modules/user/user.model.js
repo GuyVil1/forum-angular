@@ -20,7 +20,8 @@ module.exports = function(sequelize, Datatypes){
         lastname: {type: Datatypes.STRING, allowNull: false},
         firstname: {type: Datatypes.STRING, allowNull: false},
         isActive:{type: Datatypes.BOOLEAN, allowNull: false},
-        count: {type: Datatypes.INTEGER, allowNull: false}
+        count: {type: Datatypes.INTEGER, allowNull: true},
+        //token: {type: Datatypes.STRING, allowNull:true}
     }, {
         sequelize, 
         modelName: "Users"
@@ -29,6 +30,12 @@ module.exports = function(sequelize, Datatypes){
     User.addHook("beforeValidate", (model, options)=>{
         if(model.isActive == null){
             model.isActive = true;
+        }
+    });
+
+    User.addHook("beforeValidate", (model, options)=>{
+        if(model.count == null){
+            model.count = 0;
         }
     });
 

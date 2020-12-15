@@ -1,11 +1,10 @@
 const {Model} = require('sequelize');
-const role = require('.');
 
 module.exports = function(sequelize, Datatypes){
 
     class Role extends Model{
         static associations(models){
-            Role.belongsToMany(models.Users, {through:'User_Roles', timestamps: false});
+            Role.belongsToMany(models.Users, {through:'User_Roles'});
         }
     }
 

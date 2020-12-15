@@ -18,17 +18,17 @@ module.exports = function(sequelize, Datatypes){
     })
 
     //TODO: check if json can return camp null ?
-     Discussion.addHook("beforeValidate", (model, options)=>{
-         if(model.subject == null){
-             model.subject = '';
-         }
-     });
+    Discussion.addHook("beforeValidate", (model, options)=>{
+        if(model.subject == null){
+            model.subject = '';
+        }
+    });
 
-     Discussion.addHook("beforeValidate", (model, options)=>{
-         if(model.isActive == null){
+    Discussion.addHook("beforeValidate", (model, options)=>{
+        if(model.isActive == null){
             model.isActive = true;
-         }
-     });
+        }
+    });
 
     return Discussion;
 }
