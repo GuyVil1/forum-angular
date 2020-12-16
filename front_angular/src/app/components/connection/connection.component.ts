@@ -19,12 +19,13 @@ export class ConnectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.fg = this._builder.group({
-      email : ['', Validators.required],
+      email:['', Validators.required],
       password:['', Validators.required]
     })
   }
 
   onSubmit(){
+    
     const logininfo = new LoginForm()
     const formValues = this.fg.value
     logininfo.email = formValues['email']

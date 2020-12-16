@@ -6,7 +6,7 @@ class DiscussionController{
 
     
     async getAllAction(request, response){
-        db.Discussions.findAll({include: 'Messages'})
+        db.Discussions.findAll({include: ['Messages', {model: db.Users, attributes: ['username']}]})
         .then( async data => {
             response.json(response.json(data))
         })
@@ -36,7 +36,7 @@ class DiscussionController{
         .catch(error => response.json(error));
     }
 
-    createAction({body}, response){
+    createAction({body}, response){        
         db.Discussions.create({...body})
         .then(discussion => response(203).json(discussion))
         .catch(error => response.json(error))

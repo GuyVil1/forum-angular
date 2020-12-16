@@ -10,6 +10,7 @@ import { AdministrationComponent } from './components/administration/administrat
 import { MessageComponent } from './components/message/message.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NewsubjectComponent } from './components/newsubject/newsubject.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ConnectionComponent,
     RegisterComponent,
     AdministrationComponent,
-    MessageComponent
+    MessageComponent,
+    NewsubjectComponent
   ],
   imports: [
     BrowserModule,

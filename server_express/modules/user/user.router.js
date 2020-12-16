@@ -6,6 +6,7 @@ const router = express.Router();
 //console.log(UserController.getAllAction);
 router.get('/', UserController.getAllAction);
 router.get('/:id([0-9]+)/roles', UserController.getRolesByUserId);
+router.get('/:id([0-9]+)', UserController.getUserbyId)
 router.post('/login', UserController.getByCredentials);
 // router.get('/:id([0-9]+)/username', UserController.getRolesByUserId);
 

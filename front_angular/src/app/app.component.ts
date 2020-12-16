@@ -14,14 +14,14 @@ export class AppComponent  implements OnInit{
   constructor(private sessionService: SessionService) {}
 
   ngOnInit(): void {
-    this.sessionService.login();
+    //this.sessionService.login();
     this.sessionService.subscribe(user => this.isConnected = user != null);
     this.sessionService.admin(item => this.isAdmin = item.isAdmin);
   }
 
   login() {
     console.log("Login OK");
-    this.sessionService.login();
+    // this.sessionService.login();
   }
 
   logout() {

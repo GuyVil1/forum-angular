@@ -4,6 +4,7 @@ import { AdministrationComponent } from './components/administration/administrat
 import { ConnectionComponent } from './components/connection/connection.component';
 import { IndexComponent } from './components/index/index.component';
 import { MessageComponent } from './components/message/message.component';
+import { NewsubjectComponent } from './components/newsubject/newsubject.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: "connection", component: ConnectionComponent},
   {path: "register", component: RegisterComponent},
   {path: "message", component: MessageComponent},
-  {path: "administration", component: AdministrationComponent}
+  {path: "administration", component: AdministrationComponent},
+  {path: "newsubject", component: NewsubjectComponent}
 ];
 
 @NgModule({

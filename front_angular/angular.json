@@ -124,8 +124,5 @@
       }
     }
   },
-  "defaultProject": "labo-forum-mobile2020",
-  "cli": {
-    "analytics": false
-  }
+  "defaultProject": "labo-forum-mobile2020"
 }

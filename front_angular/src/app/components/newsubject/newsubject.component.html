@@ -1,0 +1,15 @@
+
+<form [formGroup]="fg" (ngSubmit)="onSubmit()"  class="regist">
+    <fieldset>
+      <legend>Creer un nouvelle Discution</legend>
+      <div class="form-group">
+          <label for="title">Titre</label>
+          <input type="text" class="form-control" id="inputtitle" placeholder="Entrez un Titre" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="sujet">Sujet</label>
+        <input type="text" class="form-control" id="inputsujet" placeholder="Entrez votre Sujet" formControlName="subject">
+    </div>
+    <button class="btn btn-secondary" type="submit">Valider</button>
+   </fieldset>
+</form>

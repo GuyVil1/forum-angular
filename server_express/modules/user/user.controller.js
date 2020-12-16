@@ -17,7 +17,7 @@ class UserController{
                         
                     });
                 } else {
-                    response.json('NOOOOT OOOKKKK !!! HAAAAA');
+                    response.send('NOOOOT OOOKKKK !!! HAAAAA');
                 }
             })
             .catch(err => response.json(err));
@@ -70,6 +70,12 @@ class UserController{
         //express creéer la méthode addRole which create a new instance on User_Roles
         user.addRole(role.id)
             .then(user => response.json(user));
+    }
+
+    async getUserbyId({params : {id}}, response){
+        const user = await db.Users.findByPk(id)
+            .then(user => response.json(user))
+            .catch(error => response.json(error))
     }
 
 

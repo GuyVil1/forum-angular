@@ -18,8 +18,12 @@ export class SessionService {
     return this.adminBS.subscribe(action);
   }
 
-  login() {
-    this.userBS.next({isConnected: true});
+  login(data: {username: string, token: string}) {
+    console.log(data);
+    if(data){
+      this.userBS.next({isConnected: true});
+    }
+    
     this.adminBS.next({isAdmin: true})
   }
 

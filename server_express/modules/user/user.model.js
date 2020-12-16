@@ -16,11 +16,12 @@ module.exports = function(sequelize, Datatypes){
         username: {type: Datatypes.STRING, allowNull: false, unique: true},
         password: {type: Datatypes.STRING, allowNull: false},
         email: {type: Datatypes.STRING, allowNull: false},
-        avatar: {type: Datatypes.STRING, allowNull: false},
+        avatar: {type: Datatypes.STRING, allowNull: true},
         lastname: {type: Datatypes.STRING, allowNull: false},
         firstname: {type: Datatypes.STRING, allowNull: false},
         isActive:{type: Datatypes.BOOLEAN, allowNull: false},
         count: {type: Datatypes.INTEGER, allowNull: true},
+        role: {type: Datatypes.STRING, allowNull:false}
         //token: {type: Datatypes.STRING, allowNull:true}
     }, {
         sequelize, 
@@ -36,6 +37,12 @@ module.exports = function(sequelize, Datatypes){
     User.addHook("beforeValidate", (model, options)=>{
         if(model.count == null){
             model.count = 0;
+        }
+    });
+
+    User.addHook("beforeValidate", (model, options)=>{
+        if(model.avatar == null){
+            model.avatar ="";
         }
     });
 
